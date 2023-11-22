@@ -86,33 +86,34 @@
         <!-- Slide 1 -->
         <div class="carousel-item active">
             <div class="carousel-container">
-                <h2 class="animate__animated animate__fadeInDown">Request a <span>Mechanic</span></h2>
-                {#          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>#}
-                {#          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>#}
                 <form class="mech-form">
+                    <h2 class="animate__animated animate__fadeInDown">Request a <span>mechanic now</span></h2>
+
                     <div class="animate__animated animate__fadeInUp">
                         <div class="flexer">
                             {#                <label for="location" class="left-curve"></label>#}
                             <input type="text" name="location" id="location" placeholder="Enter location"
                                    class="left-curve splitter">
                             {#                <button class="right-curve">Current location</button>#}
-                            <button class="icon-inside-input"><i class="bi bi-geo-alt"></i></button>
+                            <button class="icon-inside-input "><i class="bi bi-geo-alt"></i></button>
                         </div>
 
                         <div class="flexer">
                             {#                <label for="issues" class="left-curve"></label>#}
                             <select name="issues" id="issues" class="left-curve splitter2">
-                                <option value="" disabled selected>Faulty part</option>
+                                <option value="" disabled selected>Choose Faulty part</option>
                                 <option value="tyre">Tyre</option>
                                 <option value="engine">Engine</option>
                                 <option value="transmission">Transmission</option>
                                 <option value="cooling system">Cooling system</option>
+                                <option value="cooling system">Electric circuit</option>
                             </select>
                             {#                <label for="description" class="right-curve"></label>#}
                             <input type="text" name="description" id="description"
-                                   placeholder="Enter a small description" class="right-curve">
+                                   placeholder="Enter description..." class="right-curve splitter2">
                         </div>
-                        <button type="submit">Get Help</button>
+                        <button type="submit" class="btn-get-started animate__animated animate__fadeInUp">Locate Help
+                        </button>
                     </div>
                 </form>
             </div>
@@ -121,12 +122,24 @@
         <!-- Slide 2 -->
         <div class="carousel-item">
             <div class="carousel-container">
-                <h2 class="animate__animated animate__fadeInDown">Request a <span>Tow-Truck</span></h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi
-                    ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea
-                    voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi
-                    architecto.</p>
-                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                <form class="mech-form">
+                    <h2 class="animate__animated animate__fadeInDown">Request a <span>tow-truck now</span></h2>
+
+                    <div class="animate__animated animate__fadeInUp">
+                        <div class="flexer">
+                            <input type="text" name="location" id="location" placeholder="Enter pick-up location"
+                                   class="left-curve splitter">
+                            <button class="icon-inside-input"><i class="bi bi-geo-alt"></i></button>
+                        </div>
+
+                        <div class="flexer">
+                            <input type="text" name="description" id="description"
+                                   placeholder="Enter destination" class="left-curve righter splitter">
+                        </div>
+                        <button type="submit" class="btn-get-started animate__animated animate__fadeInUp">Request now
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -155,174 +168,156 @@
     <!-- ======= Services Section ======= -->
     <section class="services">
         <div class="container">
-
             <div class="row">
+
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="icon-box icon-box-pink">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate non provident</p>
+                        <div class="icon"><i class="bx bxs-car"></i></div>
+                        <h4 class="title"><a href="#">Roadside Assistance</a></h4>
+                        <p class="description">Immediate support for drivers stranded on the road, providing mechanical
+                            help and tow truck services.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-box icon-box-cyan">
-                        <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur</p>
+                        <div class="icon"><i class="bx bxs-wrench"></i></div>
+                        <h4 class="title"><a href="#">Mechanical Repairs</a></h4>
+                        <p class="description">Expert mechanics available for on-site repairs to get your vehicle back
+                            on the road swiftly.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-box icon-box-green">
-                        <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum</p>
+                        <div class="icon"><i class="bx bxs-truck"></i></div>
+                        <h4 class="title"><a href="#">Tow Truck Services</a></h4>
+                        <p class="description">Efficient towing services to transport your vehicle to a desired location
+                            or repair shop.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-box icon-box-blue">
-                        <div class="icon"><i class="bx bx-world"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                            praesentium voluptatum deleniti atque</p>
+                        <div class="icon"><i class="bi bi-hospital"></i></div>
+                        <h4 class="title"><a href="#">Emergency Assistance</a></h4>
+                        <p class="description">24/7 support for urgent situations, ensuring the safety and well-being of
+                            drivers in distress.</p>
                     </div>
                 </div>
-
             </div>
-
         </div>
-    </section><!-- End Services Section -->
+    </section>
+    <!-- End Services Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+    <section class="why-us section-bg" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-6 video-box">
-                    <img src="{% static 'assets/img/why-us.jpg' %}" class="img-fluid" alt="">
-                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
+                    <img src="{% static 'assets/img/mechanic-vector.jpg' %}" class="img-fluid" alt="">
+                    <a href="https://youtu.be/VUgXx8C1iuQ?si=2ztl700yEJXew-7b" class="venobox play-btn mb-4"
                        data-vbtype="video" data-autoplay="true"></a>
                 </div>
 
                 <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate non provident</p>
+                        <div class="icon"><i class="bi bi-clock-history"></i></div>
+                        <h4 class="title"><a href="#">24/7 roadside Assistance</a></h4>
+                        <p class="description">Our service provides round-the-clock emergency assistance, ensuring you
+                            get help whenever you need it.</p>
                     </div>
 
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                            praesentium voluptatum deleniti atque</p>
+                        <div class="icon"><i class="bi bi-wrench-adjustable-circle"></i></div>
+                        <h4 class="title"><a href="#">Experienced Mechanics</a></h4>
+                        <p class="description">Our team consists of highly skilled and experienced mechanics who deliver
+                            top-notch repair services to get you back on the road quickly.</p>
                     </div>
 
                 </div>
             </div>
-
         </div>
-    </section><!-- End Why Us Section -->
+    </section>
+    <!-- End Why Us Section -->
 
     <!-- ======= Features Section ======= -->
     <section class="features">
         <div class="container">
 
             <div class="section-title">
-                <h2>Features</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Why Choose Us?</h2>
+                <p>Explore the features that set us apart and make us the ideal choice for your assistance needs.</p>
             </div>
 
             <div class="row" data-aos="fade-up">
                 <div class="col-md-5">
-                    <img src="{% static 'assets/img/features-1.svg' %}" class="img-fluid" alt="">
+                    <img src="{% static 'assets/img/mech-run.jpg' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-4">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                    <h3>Quick Response Time</h3>
                     <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.
+                        Our rapid response ensures that help is on the way when you need it the most.
                     </p>
                     <ul>
-                        <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                        <li><i class="bi bi-check"></i> Swift assistance within minutes of your call.</li>
+                        <li><i class="bi bi-check"></i> 24/7 availability for emergencies.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="row" data-aos="fade-up">
                 <div class="col-md-5 order-1 order-md-2">
-                    <img src="{% static 'assets/img/features-2.svg' %}" class="img-fluid" alt="">
+                    <img src="{% static 'assets/img/quality-mech.jpg' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-5 order-2 order-md-1">
-                    <h3>Corporis temporibus maiores provident</h3>
+                    <h3>Expert Mechanics at Your Service</h3>
                     <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.
+                        Skilled and certified mechanics ready to tackle any repair challenge.
                     </p>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                        in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
+                        Our team is equipped to handle on-the-spot repairs, ensuring your vehicle is back on the road
+                        without delay.
                     </p>
                 </div>
             </div>
 
             <div class="row" data-aos="fade-up">
                 <div class="col-md-5">
-                    <img src="{% static 'assets/img/features-3.svg' %}" class="img-fluid" alt="">
+                    <img src="{% static 'assets/img/compre.jpg' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-5">
-                    <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-                    <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit
-                        aut quia voluptatem hic voluptas dolor doloremque.</p>
+                    <h3>Comprehensive Roadside Assistance</h3>
+                    <p>We go beyond towing - offering a range of roadside services for all types of vehicle issues.</p>
                     <ul>
-                        <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
+                        <li><i class="bi bi-check"></i> Jump-starts, tire changes, and fuel delivery.</li>
+                        <li><i class="bi bi-check"></i> Assistance with lockouts and lost keys.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="row" data-aos="fade-up">
                 <div class="col-md-5 order-1 order-md-2">
-                    <img src="{% static 'assets/img/features-4.svg' %}" class="img-fluid" alt="">
+                    <img src="{% static 'assets/img/fair-trade.jpg' %}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-5 order-2 order-md-1">
-                    <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+                    <h3>Transparent Pricing</h3>
                     <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.
+                        No hidden fees - clear and transparent pricing for all our services.
                     </p>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                        in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
+                        You'll always know what to expect, with no surprises when it comes to the cost of our
+                        assistance.
                     </p>
                 </div>
             </div>
 
         </div>
-    </section><!-- End Features Section -->
+    </section>
+
+    <!-- End Features Section -->
 
 </main><!-- End #main -->
-
 <!-- ======= Footer ======= -->
 <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
@@ -330,12 +325,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h4>Our Newsletter</h4>
-                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with our latest news and services by subscribing to our newsletter.</p>
                 </div>
                 <div class="col-lg-6">
                     <form action="" method="post">
-                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                        <input type="email" name="email" placeholder="Enter your email">
+                        <input type="submit" value="Subscribe">
                     </form>
                 </div>
             </div>
@@ -347,43 +343,39 @@
             <div class="row">
 
                 <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Useful Links</h4>
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Services</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">24/7 Emergency Assistance</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">On-Site Repairs</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Roadside Assistance</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Transparent Pricing</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contact Us</h4>
                     <p>
-                        A108 Adam Street <br>
-                        New York, NY 535022<br>
-                        United States <br><br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
+                        P.O. Box 12345-00100 <br>
+                        Nairobi, Kenya <br><br>
+                        <strong>Phone:</strong> +254 712 345 678<br>
+                        <strong>Email:</strong> info@mechanicall.co.ke<br>
                     </p>
-
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-info">
-                    <h3>About Moderna</h3>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
-                        valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                    <h4>About Us</h4>
+                    <p>Providing reliable assistance for drivers in need. Your safety and satisfaction are our
+                        priorities.</p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -398,17 +390,15 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>MECHANICALL</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed with ❤️ by <a href="https://github.com/0sugo/">Osugo</a>
         </div>
+
     </div>
-</footer><!-- End Footer -->
+</footer>
+
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
