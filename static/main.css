@@ -1,8 +1,8 @@
 .mech-form {
-    border: 2px solid red;
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
+    background: white;
 }
 
 .flexer {
@@ -11,22 +11,26 @@
 }
 
 .left-curve {
-    border-top-left-radius: 9px;
-    border-bottom-left-radius: 9px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     padding: 8px;
     box-sizing: border-box;
 }
 
+.righter {
+   border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 .right-curve {
-    border-top-right-radius: 9px;
-    border-bottom-right-radius: 9px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding: 8px;
     box-sizing: border-box;
-    margin-left: 20px; /* Adjust for the border */
+    margin-left: 10px;
 }
 .icon-inside-input {
-    border-top-right-radius: 9px;
-    border-bottom-right-radius: 9px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .splitter {
@@ -39,12 +43,12 @@
 
 button {
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #000000;
     color: white;
     border: none;
     padding: 8px;
-    border-top-right-radius: 9px;
-    border-bottom-right-radius: 9px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     box-sizing: border-box;
 }
 
@@ -55,4 +59,8 @@ select {
 input,select:focus {
     outline: none;
     border: 2px solid #ced4da;
+}
+input,select {
+    background:#F6F6F6 ;
+    border: none;
 }
