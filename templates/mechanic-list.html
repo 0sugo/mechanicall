@@ -1,10 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mechanic List</title>
 </head>
 <body>
+     <h1>Mechanic List</h1>
 
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Location</th>
+                <th>Specialisation</th>
+                <th>Car Brand</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mechanic in mechanics %}
+                <tr>
+                    <td>{{ mechanic.id }}</td>
+                    <td>{{ mechanic.firstname }}</td>
+                    <td>{{ mechanic.lastname }}</td>
+                    <td>{{ mechanic.email }}</td>
+                    <td>{{ mechanic.phone }}</td>
+                    <td>{{ mechanic.location }}</td>
+                    <td>{{ mechanic.specialisation }}</td>
+                    <td>{{ mechanic.carbrand }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
