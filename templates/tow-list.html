@@ -5,7 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-
-
+<h1>Tow-list</h1>
+{% if tows %}
+    <ul>
+        {% for tow in tows %}
+            <li>{{ tow.companyname }} - {{ tow.location }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No tow trucks found for the specified location and destination.</p>
+{% endif %}
 </body>
 </html>
