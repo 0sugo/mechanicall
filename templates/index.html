@@ -85,80 +85,84 @@
 
         <!-- Slide 1 -->
         <div class="carousel-item active">
-            <div class="carousel-container">
-                <form class="mech-form">
-                    <h2 class="animate__animated animate__fadeInDown">Request a <span>mechanic now</span></h2>
+        <div class="carousel-container">
+            {#                <form class="mech-form" method="get" action="{% url 'mechanic-list' %}">#}
+            <form class="mech-form" method="post" action="{% url 'mechanic_list' %}">
+                {% csrf_token %}
+                <h2 class="animate__animated animate__fadeInDown">Request a <span>mechanic now</span></h2>
 
-                    <div class="animate__animated animate__fadeInUp">
-                        <div class="flexer">
-                            {#                <label for="location" class="left-curve"></label>#}
-                            <input type="text" name="location" id="location" placeholder="Enter location"
-                                   class="left-curve splitter">
-                            {#                <button class="right-curve">Current location</button>#}
-                            <button class="icon-inside-input "><i class="bi bi-geo-alt"></i></button>
-                        </div>
-
-                        <div class="flexer">
-                            {#                <label for="issues" class="left-curve"></label>#}
-                            <select name="issues" id="issues" class="left-curve splitter2">
-                                <option value="" disabled selected>Choose Faulty part</option>
-                                <option value="tyre">Tyre</option>
-                                <option value="engine">Engine</option>
-                                <option value="transmission">Transmission</option>
-                                <option value="cooling system">Cooling system</option>
-                                <option value="cooling system">Electric circuit</option>
-                            </select>
-                            {#                <label for="description" class="right-curve"></label>#}
-                            <input type="text" name="description" id="description"
-                                   placeholder="Enter description..." class="right-curve splitter2">
-                        </div>
-                        <button type="submit" class="btn-get-started animate__animated animate__fadeInUp">Locate Help
-                        </button>
+                <div class="animate__animated animate__fadeInUp">
+                    <div class="flexer">
+                        {#                <label for="location" class="left-curve"></label>#}
+                        <input type="text" name="location" id="location" placeholder="Enter location"
+                               class="left-curve splitter">
+                        {#                <button class="right-curve">Current location</button>#}
+                        <button class="icon-inside-input "><i class="bi bi-geo-alt"></i></button>
                     </div>
-                </form>
-            </div>
-        </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-            <div class="carousel-container">
-                <form class="mech-form">
-                    <h2 class="animate__animated animate__fadeInDown">Request a <span>tow-truck now</span></h2>
-
-                    <div class="animate__animated animate__fadeInUp">
-                        <div class="flexer">
-                            <input type="text" name="location" id="location" placeholder="Enter pick-up location"
-                                   class="left-curve splitter">
-                            <button class="icon-inside-input"><i class="bi bi-geo-alt"></i></button>
-                        </div>
-
-                        <div class="flexer">
-                            <input type="text" name="description" id="description"
-                                   placeholder="Enter destination" class="left-curve righter splitter">
-                        </div>
-                        <button type="submit" class="btn-get-started animate__animated animate__fadeInUp">Request now
-                        </button>
+                    <div class="flexer">
+                        {#                <label for="issues" class="left-curve"></label>#}
+                        <select name="faulty_part" id="faulty_part" class="left-curve splitter2">
+                            <option value="" disabled selected>Choose Faulty part</option>
+                            <option value="Tyre">Tyre</option>
+                            <option value="Engine">Engine</option>
+                            <option value="Transmission">Transmission</option>
+                            <option value="Cooling system">Cooling system</option>
+                            <option value="Electric circuit">Electric circuit</option>
+                        </select>
+                        {#                <label for="description" class="right-curve"></label>#}
+                        <input type="text" name="description" id="description"
+                               placeholder="Enter description..." class="right-curve splitter2">
                     </div>
-                </form>
-            </div>
+                    <button type="submit" class="btn-get-started animate__animated animate__fadeInUp">Locate Help
+                    </button>
+                </div>
+            </form>
         </div>
+    </div>
 
-        <!-- Slide 3 -->
-        {#      <div class="carousel-item">#}
-        {#        <div class="carousel-container">#}
-        {#          <h2 class="animate__animated animate__fadeInDown">See close by <span>Petrol stations</span></h2>#}
-        {#          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>#}
-        {#          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>#}
-        {#        </div>#}
-        {#      </div>#}
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+        <div class="carousel-container">
+            <form class="mech-form" method="post" action="{% url 'tow_list' %}">
+                {% csrf_token %}
 
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-        </a>
+                <h2 class="animate__animated animate__fadeInDown">Request a <span>tow-truck now</span></h2>
 
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-        </a>
+                <div class="animate__animated animate__fadeInUp">
+                    <div class="flexer">
+                        <input type="text" name="location" id="location" placeholder="Enter pick-up location"
+                               class="left-curve splitter">
+                        <button class="icon-inside-input"><i class="bi bi-geo-alt"></i></button>
+                    </div>
+
+                    <div class="flexer">
+                        <input type="text" name="destination" id="destination"
+                               placeholder="Enter destination" class="left-curve righter splitter">
+                    </div>
+                    <button type="submit" class="btn-get-started animate__animated animate__fadeInUp">Request now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    {#      <div class="carousel-item">#}
+    {#        <div class="carousel-container">#}
+    {#          <h2 class="animate__animated animate__fadeInDown">See close by <span>Petrol stations</span></h2>#}
+    {#          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>#}
+    {#          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>#}
+    {#        </div>#}
+    {#      </div>#}
+
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+    </a>
 
     </div>
 </section><!-- End Hero -->
