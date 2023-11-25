@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for mechanic in mechanics %}
+    <tr>
+        <td>{{ mechanic.firstname }}</td>
+        <td>{{ mechanic.lastname }}</td>
+        <td>{{ mechanic.phone }}</td>
+        <td>{% if mechanic.is_busy %}Busy{% else %}Free{% endif %}</td>
+        <td>
+            <a href="{% url 'toggle_mechanic_status' mechanic.id %}" class="btn btn-primary">Toggle Status</a>
+        </td>
+    </tr>
+{% endfor %}
+{#http://127.0.0.1:8000/toggle-mechanic-status/1/#}
+
+</body>
+</html>
