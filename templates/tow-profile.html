@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for tow in tows %}
+    <tr>
+        <td>{{ tow.companyname }}</td>
+        <td>{{ tow.location }}</td>
+        <td>{% if tow.is_busy %}Busy{% else %}Free{% endif %}</td>
+        <td>
+            <a href="{% url 'toggle_tow_status' tow.id %}" class="btn btn-primary">Toggle Status</a>
+        </td>
+    </tr>
+{% endfor %}
+
+</body>
+</html>
