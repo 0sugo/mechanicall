@@ -64,3 +64,9 @@ input,select {
     background:#F6F6F6 ;
     border: none;
 }
+/*login*/
+.centerer{
+    border: 1px solid red;
+    box-sizing: border-box;
+
+}
