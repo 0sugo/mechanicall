@@ -86,7 +86,6 @@
         <!-- Slide 1 -->
         <div class="carousel-item active">
         <div class="carousel-container">
-            {#                <form class="mech-form" method="get" action="{% url 'mechanic-list' %}">#}
             <form class="mech-form" method="post" action="{% url 'mechanic_list' %}">
                 {% csrf_token %}
                 <h2 class="animate__animated animate__fadeInDown">Request a <span>mechanic now</span></h2>
