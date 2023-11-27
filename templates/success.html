@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<body>
+
+<!-- Your success message -->
+    <div>
+        <h1>Please complete the USSD prompt on your phone!</h1>
+        <p>Redirecting you after verification,Do not refresh/cancel...</p>
+    </div>
+
+    <!-- JavaScript for the delay and redirect -->
+    <script>
+        setTimeout(function() {
+            window.location.href = '{% url "index2" %}';
+        }, 15000);
+    </script>
+
+</body>
+</html>
