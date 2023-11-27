@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <!-- Bootstrap CSS link (you can use a CDN or download the file locally) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Add your custom styles here if needed */
+        .table-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container table-container">
+    <h2 class="text-center">Mechanics</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Location</th>
+            <th scope="col">Specialisation</th>
+            <th scope="col">Car Brand</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mechanic in mechanics %}
+            <tr>
+                <td>{{ mechanic.id }}</td>
+                <td>{{ mechanic.firstname }} {{ mechanic.lastname }}</td>
+                <td>{{ mechanic.email }}</td>
+                <td>{{ mechanic.phone }}</td>
+                <td>{{ mechanic.location }}</td>
+                <td>{{ mechanic.specialisation }}</td>
+                <td>{{ mechanic.carbrand }}</td>
+                <td>{% if mechanic.is_busy %}Busy{% else %}Free{% endif %}</td>
+                <td>
+                    <a href="{% url 'edit_mechanic' mechanic.id %}">Edit</a>
+                    /
+                    <a href="{% url 'delete_mechanic' mechanic.id %}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="text-center">Tow Trucks</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Location</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for tow in tows %}
+            <tr>
+                <td>{{ tow.id }}</td>
+                <td>{{ tow.companyname }}</td>
+                <td>{{ tow.email }}</td>
+                <td>{{ tow.phone }}</td>
+                <td>{{ tow.location }}</td>
+                <td>{% if tow.is_busy %}Busy{% else %}Free{% endif %}</td>
+                <td>
+                    <a href="{% url 'edit_tow' tow.id %}">Edit</a>
+                    /
+                    <a href="{% url 'delete_tow' tow.id %}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="container form-container">
+    <!-- Form for adding new mechanic -->
+    <h2 class="text-center">Add New Mechanic</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ mechanic_form.as_p }}
+        <button type="submit" name="add_mechanic" class="btn btn-primary">Add Mechanic</button>
+    </form>
+
+    <!-- Form for adding new tow -->
+    <h2 class="text-center">Add New Tow</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ tow_form.as_p }}
+        <button type="submit" name="add_tow" class="btn btn-primary">Add Tow</button>
+</form>
+</div>
+
+<!-- Bootstrap JS and Popper.js (you can use a CDN or download the files locally) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
