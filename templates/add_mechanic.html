@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Mechanic</title>
+</head>
+<body>
+    <h2>Add Mechanic</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Mechanic</button>
+    </form>
+</body>
+</html>
