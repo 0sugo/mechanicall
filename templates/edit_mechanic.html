@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Mechanic</title>
+    <!-- Bootstrap CSS link (you can use a CDN or download the file locally) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Add your custom styles here if needed */
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container form-container">
+        <h2 class="text-center">Edit Mechanic</h2>
+        <form action="{% url 'edit_mechanic' mechanic.id %}" method="post">
+    {% csrf_token %}
+    <!-- Add your form fields here -->
+    <div class="form-group">
+        <label for="firstname">First Name:</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" value="{{ mechanic.firstname }}" required>
+    </div>
+    <div class="form-group">
+        <label for="lastname">Last Name:</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" value="{{ mechanic.lastname }}" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" value="{{ mechanic.email }}" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="{{ mechanic.phone }}" required>
+    </div>
+    <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" name="location" value="{{ mechanic.location }}" required>
+    </div>
+    <div class="form-group">
+        <label for="specialisation">Specialisation:</label>
+        <input type="text" class="form-control" id="specialisation" name="specialisation" value="{{ mechanic.specialisation }}" required>
+    </div>
+    <div class="form-group">
+        <label for="carbrand">Car Brand:</label>
+        <input type="text" class="form-control" id="carbrand" name="carbrand" value="{{ mechanic.carbrand }}" required>
+    </div>
+    <div class="form-group">
+        <label for="is_busy">Is Busy:</label>
+        <input type="checkbox" class="form-check-input" id="is_busy" name="is_busy" {% if mechanic.is_busy %}checked{% endif %}>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Mechanic</button>
+</form>
+
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (you can use a CDN or download the files locally) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
