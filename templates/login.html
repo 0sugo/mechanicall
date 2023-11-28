@@ -34,10 +34,20 @@
 <div class="centerer">
     <section class="text-center">
         <!-- Background image -->
-        <div class="p-5 bg-image" style="
-        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
-        height: 300px;
-        "></div>
+{#        <div class="p-5 bg-image" style="#}
+        {#background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');#}
+{#        background-image: url('https://cdn.dribbble.com/users/1606371/screenshots/3975976/media/a168daed17904cdf0990fe380051d50e.jpg?resize=600x600');#}
+{#        height: 300px;#}
+{#        "></div>#}
+    <div class="p-5 bg-image" style="
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(40, 96, 175, 1) 200%), url('https://cdn.dribbble.com/users/1606371/screenshots/3975976/media/a168daed17904cdf0990fe380051d50e.jpg?resize=600x600');
+    background-size: contain; /* This property ensures the image covers the entire container */
+    background-position: center; /* This property centers the image */
+    background-repeat: no-repeat; /* This property prevents the image from repeating */
+    height: 350px;
+"></div>
+
+
         <!-- Background image -->
 
         <div class="card mx-4 mx-md-5 shadow-5-strong" style="
@@ -101,6 +111,7 @@
 
                             <!-- Register buttons -->
                             <div class="text-center">
+                                <p>Are you a Mechanic/Tow-truck? <a href="{% url 'mechLogin' %}">Register</a></p>
                                 <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
                                 <p>or sign up with:</p>
                                 <button type="button" class="btn btn-link btn-floating mx-1">
