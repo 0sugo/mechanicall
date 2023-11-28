@@ -2,39 +2,36 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>About - Moderna Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>Mechanicall - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    {% load static %}
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+          rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Moderna
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -44,36 +41,18 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <h1 class="text-light"><a href="index.html"><span>Moderna</span></a></h1>
+        <h1 class="text-light"><a href="index.html"><span>Mechanicall</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="" href="index.html">Home</a></li>
-          <li><a class="active" href="about.html">About</a></li>
+          <li><a class="" href="{% url 'index' %}">Home</a></li>
+          <li><a class="active" href="{% url 'about' %}">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="team.html">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -100,37 +79,82 @@
     </section><!-- End About Us Section -->
 
     <!-- ======= About Section ======= -->
-    <section class="about" data-aos="fade-up">
-      <div class="container">
+    <section class="features">
+        <div class="container">
 
-        <div class="row">
-          <div class="col-lg-6">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check2-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-          </div>
+            <div class="section-title">
+                <h2>Why Choose Us?</h2>
+                <p>Explore the features that set us apart and make us the ideal choice for your assistance needs.</p>
+            </div>
+
+            <div class="row" >
+                <div class="col-md-5">
+                    <img src="{% static 'assets/img/mech-run.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 pt-4">
+                    <h3>Quick Response Time</h3>
+                    <p class="fst-italic">
+                        Our rapid response ensures that help is on the way when you need it the most.
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check"></i> Swift assistance within minutes of your call.</li>
+                        <li><i class="bi bi-check"></i> 24/7 availability for emergencies.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 order-1 order-md-2">
+                    <img src="{% static 'assets/img/quality-mech.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 pt-5 order-2 order-md-1">
+                    <h3>Expert Mechanics at Your Service</h3>
+                    <p class="fst-italic">
+                        Skilled and certified mechanics ready to tackle any repair challenge.
+                    </p>
+                    <p>
+                        Our team is equipped to handle on-the-spot repairs, ensuring your vehicle is back on the road
+                        without delay.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="{% static 'assets/img/compre.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 pt-5">
+                    <h3>Comprehensive Roadside Assistance</h3>
+                    <p>We go beyond towing - offering a range of roadside services for all types of vehicle issues.</p>
+                    <ul>
+                        <li><i class="bi bi-check"></i> Jump-starts, tire changes, and fuel delivery.</li>
+                        <li><i class="bi bi-check"></i> Assistance with lockouts and lost keys.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-md-5 order-1 order-md-2">
+                    <img src="{% static 'assets/img/fair-trade.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 pt-5 order-2 order-md-1">
+                    <h3>Transparent Pricing</h3>
+                    <p class="fst-italic">
+                        No hidden fees - clear and transparent pricing for all our services.
+                    </p>
+                    <p>
+                        You'll always know what to expect, with no surprises when it comes to the cost of our
+                        assistance.
+                    </p>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-      </div>
-    </section><!-- End About Section -->
 
     <!-- ======= Facts Section ======= -->
-    <section class="facts section-bg" data-aos="fade-up">
+    <section class="facts section-bg" >
       <div class="container">
 
         <div class="row counters">
@@ -159,54 +183,15 @@
 
       </div>
     </section><!-- End Facts Section -->
-
-    <!-- ======= Our Skills Section ======= -->
-    <section class="skills" data-aos="fade-up">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Skills</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="skills-content">
-
-          <div class="progress">
-            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">HTML <i class="val">100%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">CSS <i class="val">90%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">Photoshop <i class="val">55%</i></span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Our Skills Section -->
+      
 
     <!-- ======= Tetstimonials Section ======= -->
-    <section class="testimonials" data-aos="fade-up">
+    <section class="testimonials" >
       <div class="container">
 
         <div class="section-title">
           <h2>Tetstimonials</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Real stories from our satisfied customers. Read what they have to say about their experience with Mechanicall.</p>
         </div>
 
         <div class="testimonials-carousel swiper">
@@ -216,10 +201,11 @@
               <h3>Saul Goodman</h3>
               <h4>Ceo &amp; Founder</h4>
               <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+    "Working with Mechanicall has been a truly exceptional experience. Their team is professional, and their service is outstanding. From quick response times to skilled mechanics, Mechanicall has exceeded our expectations. We highly recommend their services."
+    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+</p>
+
             </div>
 
             <div class="testimonial-item swiper-slide">
@@ -275,90 +261,85 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+<footer id="footer" >
 
     <div class="footer-newsletter">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with our latest news and services by subscribing to our newsletter.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form action="" method="post">
+                        <input type="email" name="email" placeholder="Enter your email">
+                        <input type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="footer-top">
-      <div class="container">
-        <div class="row">
+        <div class="container">
+            <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+                    </ul>
+                </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">24/7 Emergency Assistance</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">On-Site Repairs</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Roadside Assistance</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Transparent Pricing</a></li>
+                    </ul>
+                </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>
+                        P.O. Box 12345-00100 <br>
+                        Nairobi, Kenya <br><br>
+                        <strong>Phone:</strong> +254 712 345 678<br>
+                        <strong>Email:</strong> info@mechanicall.co.ke<br>
+                    </p>
+                </div>
 
-          </div>
+                <div class="col-lg-3 col-md-6 footer-info">
+                    <h4>About Us</h4>
+                    <p>Providing reliable assistance for drivers in need. Your safety and satisfaction are our
+                        priorities.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
 
-          <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Moderna</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
-          </div>
-
         </div>
-      </div>
     </div>
 
     <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+        <div class="copyright">
+            &copy; Copyright <strong><span>MECHANICALL</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed with ❤️ by <a href="https://github.com/0sugo/">Osugo</a>
+        </div>
+
     </div>
-  </footer><!-- End Footer -->
+</footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
