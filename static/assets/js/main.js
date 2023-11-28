@@ -234,3 +234,22 @@
   new PureCounter();
 
 })()
+    document.addEventListener("DOMContentLoaded", function () {
+        var heroSection = document.getElementById("hero");
+        var payModal = new bootstrap.Modal(document.getElementById("payModal"));
+
+        heroSection.addEventListener("mouseenter", function () {
+            // Add the blur class when the mouse enters
+            heroSection.classList.add("blur");
+        });
+
+        heroSection.addEventListener("mouseleave", function () {
+            // Remove the blur class when the mouse leaves
+            heroSection.classList.remove("blur");
+        });
+
+        heroSection.addEventListener("click", function () {
+            // Show the modal when the section is clicked
+            payModal.show();
+        });
+    });
