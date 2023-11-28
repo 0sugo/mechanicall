@@ -9,6 +9,7 @@ class Mechanic(models.Model):
     location = models.CharField(max_length=50)
     specialisation = models.CharField(max_length=40)
     carbrand = models.CharField(max_length=40)
+    password = models.CharField(max_length=20)
     is_busy = models.BooleanField(default=False)
 
     def toggle_busy_status(self):
@@ -31,6 +32,7 @@ class Tow(models.Model):
     id = models.AutoField(primary_key=True)
     companyname = models.CharField(max_length=40)
     email = models.EmailField()
+    password = models.CharField(max_length=20)
     phone = models.CharField(max_length=15)
     location = models.CharField(max_length=50)
     is_busy = models.BooleanField(default=False)
@@ -54,6 +56,7 @@ class User(models.Model):
         email = models.EmailField()
         username = models.CharField(max_length=50)
         password = models.CharField(max_length=20)
+
 
         def __str__(self):
             return self.firstname+" "+self.lastname
