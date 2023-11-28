@@ -48,10 +48,10 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="active " href="index.html">Home</a></li>
+                <li><a class="active " href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="team.html">Team</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -84,7 +84,7 @@
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000000">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active">
+        <div class="carousel-item active" id="hero2">
         <div class="carousel-container">
             <form class="mech-form" method="post" action="{% url 'mechanic_list' %}">
                 {% csrf_token %}
@@ -121,9 +121,29 @@
     </div>
 
     <!-- Slide 2 -->
+<div id="payModal" class="modal">
+  <div class="modal-content">
+{#    <span class="close">&times;</span>#}
+    <p>Follow the steps below to access ready mechanics</p>
+          <form method="post" action="{% url 'stk' %}"  >
+        {% csrf_token %}
+        <label for="phone">Phone Number:</label>
+        <input type="number" name="phone" value="254"  placeholder="Phone number" required="required">
+        <br><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" value="50" placeholder="Amount" required="required" readonly>
+        <br><br>
+
+        <button type="submit">Pay now</button>
+    </form>
+{#    <a href="{% url 'pay' %}" class="btn btn-success">Pay</a>#}
+  </div>
+</div>
+
     <div class="carousel-item">
         <div class="carousel-container">
-            <form class="mech-form" method="post" action="{% url 'tow_list' %}">
+            <form class="mech-form betray" method="post" action="{% url 'tow_list' %}">
                 {% csrf_token %}
 
                 <h2 class="animate__animated animate__fadeInDown">Request a <span>tow-truck now</span></h2>
@@ -145,15 +165,6 @@
             </form>
         </div>
     </div>
-
-    <!-- Slide 3 -->
-    {#      <div class="carousel-item">#}
-    {#        <div class="carousel-container">#}
-    {#          <h2 class="animate__animated animate__fadeInDown">See close by <span>Petrol stations</span></h2>#}
-    {#          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>#}
-    {#          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>#}
-    {#        </div>#}
-    {#      </div>#}
 
     <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
