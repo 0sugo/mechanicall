@@ -1,32 +1,76 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <!-- Bootstrap CSS link (you can use a CDN or download the file locally) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        /* Add your custom styles here if needed */
-        .table-container {
-            max-width: 800px;
-            margin: 20px auto;
-        }
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        .table th, .table td {
-            text-align: center;
-        }
+    <title>Mechanics List</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    {% load static %}
 
-        .form-container {
-            max-width: 600px;
-            margin: 20px auto;
-        }
-    </style>
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
 </head>
+
 <body>
 
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <div class="logo">
+            <h1 class="text-light"><a href="index.html"><span>MECHANICALL</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            {#        <a href="index.html"><img src="{% static 'assets/img/apple-touch-icon.png' %}" alt="" class="img-fluid"></a>#}
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="active " href="">Home</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<main id="main">
+<div class="container form-container ">
+    <!-- Buttons for adding new mechanic and new tow -->
+    <h2 class="text-center ">Add staff</h2>
+    <a href="{% url 'add_mechanic' %}" class="btn btn-primary ">Add Mechanic</a>
+    <a href="{% url 'add_tow' %}" class="btn btn-primary">Add Tow</a>
+</div>
+
 <div class="container table-container">
-    <h2 class="text-center">Mechanics</h2>
+    <h2 class="text-center">All mechanics</h2>
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -62,7 +106,7 @@
         </tbody>
     </table>
 
-    <h2 class="text-center">Tow Trucks</h2>
+    <h2 class="text-center">All Tow Trucks</h2>
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -93,30 +137,131 @@
         {% endfor %}
         </tbody>
     </table>
+
+ <h2 class="text-center">All requests</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Location</th>
+            <th scope="col">Faulty part</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+            <tr>
+                <td>{{ service.id }}</td>
+                <td>{{ service.location }}</td>
+                <td>{{ service.faulty_part }}</td>
+                <td>{{ service.description }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 
-<div class="container form-container">
-    <!-- Form for adding new mechanic -->
-    <h2 class="text-center">Add New Mechanic</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ mechanic_form.as_p }}
-        <button type="submit" name="add_mechanic" class="btn btn-primary">Add Mechanic</button>
-    </form>
+</main><!-- End #main -->
 
-    <!-- Form for adding new tow -->
-    <h2 class="text-center">Add New Tow</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ tow_form.as_p }}
-        <button type="submit" name="add_tow" class="btn btn-primary">Add Tow</button>
-</form>
-</div>
+<!-- ======= Footer ======= -->
+<footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
-<!-- Bootstrap JS and Popper.js (you can use a CDN or download the files locally) -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with our latest news and services by subscribing to our newsletter.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form action="" method="post">
+                        <input type="email" name="email" placeholder="Enter your email">
+                        <input type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">24/7 Emergency Assistance</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">On-Site Repairs</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Roadside Assistance</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Transparent Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>
+                        P.O. Box 12345-00100 <br>
+                        Nairobi, Kenya <br><br>
+                        <strong>Phone:</strong> +254 712 345 678<br>
+                        <strong>Email:</strong> info@mechanicall.co.ke<br>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-info">
+                    <h4>About Us</h4>
+                    <p>Providing reliable assistance for drivers in need. Your safety and satisfaction are our
+                        priorities.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>MECHANICALL</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed with ❤️ by <a href="https://github.com/0sugo/">Osugo</a>
+        </div>
+
+    </div>
+</footer>
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}t %}"></script>
+<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script src="{% static 'assets/js/mine.js' %}"></script>
 
 </body>
+
 </html>
