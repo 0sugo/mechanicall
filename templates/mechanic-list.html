@@ -82,6 +82,7 @@
 <main id="main">
     <div class="container mt-5">
         <h1 class="mb-4">Mechanics</h1>
+
         {% if mechanics %}
             <table class="table table-bordered">
                 <thead class="thead-dark">
@@ -89,6 +90,7 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Phone</th>
+                        <th>Car Model</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -98,6 +100,7 @@
                             <td>{{ mechanic.firstname }}</td>
                             <td>{{ mechanic.lastname }}</td>
                             <td>{{ mechanic.phone }}</td>
+                            <td>{{ mechanic.carbrand }}</td>
                             <td>
                                 {% if mechanic.is_busy %}
                                     <span class="badge badge-danger text-danger text-uppercase">Busy</span>
@@ -212,6 +215,7 @@
 
 <!-- Template Main JS File -->
 <script src="{% static 'assets/js/main.js' %}"></script>
+<script src="{% static 'assets/js/mine.js' %}"></script>
 
 </body>
 
